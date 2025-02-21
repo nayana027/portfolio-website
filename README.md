@@ -1,33 +1,49 @@
-# portfolio-website
-# Portfolio Website Deployment - DevOps CI/CD Pipeline
+# 🚀 Portfolio Website Deployment with CI/CD
 
 ## 📌 Overview
-This project automates the deployment of a personal **portfolio website** using a **CI/CD pipeline** with **Docker, Kubernetes, Jenkins, and GitHub Actions**.
+This project automates the deployment of a **portfolio website** using **CI/CD pipelines**, **Docker**, **Kubernetes**, and **IBM Cloud**.
 
-## 🚀 Features
-- **Containerized Deployment**: Uses **Docker** for frontend & backend.
-- **CI/CD Automation**: Automates build, test, and deployment using **Jenkins** and **GitHub Actions**.
-- **Kubernetes Deployment**: Uses **IBM Cloud Kubernetes** for scalability.
-- **Version Control**: GitHub repository for collaborative development.
+## 🔹 Features
+- **Automated CI/CD** using **GitHub Actions & Jenkins**.
+- **Containerized Deployment** with **Docker**.
+- **Scalable Microservices** deployed on **Kubernetes**.
+- **Cloud-Based Hosting** using **IBM Cloud Kubernetes Service**.
 
-## 📁 Directory Structure
+---
+
+## 🛠️ **Tech Stack**
+| Component     | Technology Used  |
+|--------------|----------------|
+| **Frontend** | React.js (or HTML/CSS/JS) |
+| **Backend**  | Node.js & Express.js |
+| **Database** | MongoDB |
+| **CI/CD**    | GitHub Actions & Jenkins |
+| **Containerization** | Docker & Kubernetes |
+| **Cloud Hosting** | IBM Cloud Kubernetes |
+
+---
+
+## 📁 **Project Structure**
 ```plaintext
-portfolio-website/
-├── frontend/
-│   ├── public/
+portfolio-deployment/
+├── frontend/                      # Frontend application
 │   ├── src/
+│   ├── public/
 │   ├── package.json
-├── backend/
+├── backend/                       # Backend API
 │   ├── controllers/
-│   ├── models/
 │   ├── routes/
 │   ├── server.js
-├── k8s/
+├── k8s/                           # Kubernetes manifests
 │   ├── frontend-deployment.yaml
 │   ├── backend-deployment.yaml
-├── .github/workflows/
+│   ├── frontend-service.yaml
+│   ├── backend-service.yaml
+├── .github/workflows/             # CI/CD workflow for GitHub Actions
 │   ├── ci-cd-pipeline.yaml
-├── Dockerfile
-├── docker-compose.yml
-├── Jenkinsfile
-└── README.md
+├── Jenkinsfile                    # Jenkins pipeline configuration
+├── Dockerfile-frontend            # Frontend Dockerfile
+├── Dockerfile-backend             # Backend Dockerfile
+├── docker-compose.yml             # Docker Compose file for local testing
+├── .gitignore                      # Ignore unnecessary files
+├── README.md                       # Documentation
