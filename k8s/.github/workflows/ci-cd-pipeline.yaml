@@ -1,0 +1,30 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Login to IBM Cloud
+      run: |
+        ibmcloud login --apikey ${{ secrets.IBM_CLOUD_API_KEY }}
+
+    - name: Build and Push Docker Images
+      run: |
+        docker build -t us.icr.io/nayana/portfolio-frontend ./frontend
+        docker build -t us.icr.io/nayana/portfolio-backend ./backend
+        docker push us.icr.io/nayana/portfolio-frontend
+        docker push us.icr.io/nayana/portfolio-backend
+
+    - name: Deploy to Kubernetes
+      run: |
+        kubectl apply -f k8s/frontend-deployment.yaml
+        kubectl apply -f k8s/backend-deployment.yaml
